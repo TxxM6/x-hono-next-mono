@@ -1,16 +1,14 @@
 "use client";
 
-import { client } from "@/utils/client";
+import Todos from "@/components/Todos";
+import TodoInput from "@/components/TodoInput";
 
 export default function Home() {
-  const handleClick = async () => {
-    const res = await client.hello.$get();
-    const data = await res.json();
-    alert(data.message);
-  };
   return (
-    <div>
-      <button onClick={handleClick}>Click me</button>
+    <div className="mt-10">
+      <h1 className="text-3xl font-bold text-center">Todo</h1>
+      <TodoInput />
+      <Todos />
     </div>
   );
 }
